@@ -1,20 +1,18 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import permissions, viewsets
+from oauth2_provider.ext.rest_framework import TokenHasReadWriteScope, TokenHasScope
 
 from quickstart.serializers import UserSerializer, GroupSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = User.objects.all().order_by('-date_joined')
+    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
+    queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
+    permission_classes = [permissions.IsAuthenticated, TokenHasScope]
+    required_scopes = ['groups']
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
