@@ -17,7 +17,7 @@
             <div class="box">
                 <p>No Authentication</p>
                 <ul class="actions">
-                    <li><a href="#" class="button">Etiam posuere</a></li>
+                    <li><a href="{% url 'client:no_auth' %}" class="button">No Auth</a></li>
                 </ul>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <div class="box">
                 <p>HTTP Basic Authentication</p>
                 <ul class="actions">
-                    <li><a href="#" class="button">Etiam posuere</a></li>
+                    <li><a href="{% url 'client:basic_auth' %}" class="button">Basic Auth</a></li>
                 </ul>
             </div>
         </div>
@@ -33,28 +33,10 @@
             <div class="box">
                 <p>HTTP Token Authentication</p>
                 <ul class="actions">
-                    <li><a href="#" class="button">Etiam posuere</a></li>
+                    <li><a href="{% url 'client:token_auth' %}" class="button">Token Auth</a></li>
                 </ul>
             </div>
         </div>
     </div>
-</div>
-<div id="featured">
-    <div class="container">
-        <img src="{% static 'images/leopard.jpg' %}" alt="Leopard" width="1000"/>
-        <div class="title">
-            <h2>This is a leopard.</h2>
-            <span class="byline">This leopard is fairly majestic.</span>
-        </div>
-        <p>This is <strong>BarbedFlower</strong>, a free, fully standards-compliant CSS template designed by <a
-                href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a
-                href="http://unsplash.com/"> Unsplash</a>. This free template is released under the <a
-                href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much
-            free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have
-            fun :) </p>
-    </div>
-    <ul class="actions">
-        <li><a href="#" class="button">Etiam posuere</a></li>
-    </ul>
 </div>
 {% endblock %}

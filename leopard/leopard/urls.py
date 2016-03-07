@@ -15,9 +15,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from consumer.views import example_view
-
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', example_view),
+    url(r'^', include('consumer.urls', namespace='client')),
 ]
