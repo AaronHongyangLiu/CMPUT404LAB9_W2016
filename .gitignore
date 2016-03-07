@@ -60,3 +60,14 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+#Virtual Environment
+venv
+
+#Sqlite3 files
+*.sqlite3
+
+#Misc Stuff
+*#
+*~
+.idea
